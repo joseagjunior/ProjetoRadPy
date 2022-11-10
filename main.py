@@ -1,0 +1,9 @@
+import criaTabHospital
+import criaTabPaciente
+import criaTabEnfermeiro
+import criaTabMedico
+import criaTabTratamento
+import criaTabTelefoneMed
+import criaTabEspecialidade
+import criaTabEspMed
+import project
