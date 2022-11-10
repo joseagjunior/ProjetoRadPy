@@ -19,9 +19,7 @@ def cadastro_hospital():
             messagebox.showinfo(title="Erro", message="É necessário digitar todos os dados!")
             return
         try:
-            bancoDados = "hospital.db"
-            dados_hospital = "INSERT INTO hospital (cnpj, nome, rua, numero, bairro, cidade, cep, telefone) VALUES ('"+cnpj.get()+"', '"+nome.get()+"', '"+rua.get()+"', '"+numero.get()+"', '"+bairro.get()+"', '"+cidade.get()+"', '"+cep.get()+"', '"+telefone.get()+"')"
-            banco.conexaoBanco(bancoDados)
+            dados_hospital = "INSERT INTO Hospital (CNPJ, Nome, Rua, Numero, Bairro, Cidade, CEP, Telefone) VALUES ('"+cnpj.get()+"', '"+nome.get()+"', '"+rua.get()+"', '"+numero.get()+"', '"+bairro.get()+"', '"+cidade.get()+"', '"+cep.get()+"', '"+telefone.get()+"')"
             banco.dml(dados_hospital)
             messagebox.showinfo(title="Salvo", message="Dados salvos com sucesso!")
         except SyntaxError:
