@@ -32,6 +32,6 @@ def dml(query): #insert, update, delete
         print(ex)
 
 
-#dados_hospital = "INSERT INTO hospital (cnpj, nome, rua, numero, bairro, cidade, cep, telefone) VALUES (1, 2, 3, 4, 5, 6, 7, 8)"
+#dados_hospital = "INSERT INTO Especialidade (nomeEspecialidade) VALUES ('ClinicoGeral')"
 #dml(dados_hospital)
         

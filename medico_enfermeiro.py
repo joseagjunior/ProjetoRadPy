@@ -3,21 +3,20 @@ import sqlite3
 conexao = sqlite3.connect('dados.db')
 cursor = conexao.cursor()
 
-
-cursor.execute("""
-CREATE TABLE EspecialidadeMed (
+cursor.execute('''
+CREATE TABLE medicoEnfermeiro (
         CRM INT NULL,
-        ID INT,
-        CONSTRAINT FK_EspecialidadeMed_Medico
+        COREN INT NULL,
+        CONSTRAINT FK_medicoEnfermeiro_Medico
         FOREIGN KEY (CRM) REFERENCES Medico(CRM)
         ON DELETE CASCADE
         ON UPDATE CASCADE,
-        CONSTRAINT FK_EspecialidadeMed_Especialidade
-        FOREIGN KEY (ID) REFERENCES Especialidade(ID)
+        CONSTRAINT FK_medicoEnfermeiro_Enfermeiro
+        FOREIGN KEY (COREN) REFERENCES Enfermeiro(COREN)
         ON DELETE CASCADE
         ON UPDATE CASCADE
         );
-""")
+''')
 
 print('tabela criada com sucesso')
 

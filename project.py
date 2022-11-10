@@ -4,6 +4,7 @@ from tkinter import messagebox
 import banco
 from cadastros import *
 
+#tela e frame
 menu_inicial = Tk()
 menu_inicial.title("MedSystem")
 mi_frm = ttk.Frame(menu_inicial, padding=20)
@@ -17,9 +18,10 @@ enfermeiro_icon = PhotoImage(file= r"icon\enfermeiro_icon.png").subsample(8,8)
 paciente_icon = PhotoImage(file= r"icon\paciente_icon.png").subsample(8,8)
 tratamento_icon = PhotoImage(file= r"icon\tratamento_icon.png").subsample(8,8)
 
+#botões
 ttk.Button(mi_frm, text="Cadastrar Hosital", image=hospital_icon, compound=TOP, command=cadastro_hospital, width=25, padding=7).grid(column=1, row=1)
-ttk.Button(mi_frm, text="Cadastrar Médico(a)", image=medico_icon, compound=TOP, command=cadastro_hospital, width=25, padding=7).grid(column=2, row=1)
-ttk.Button(mi_frm, text="Cadastrar Especialidades", image=especialidade_icon, compound=TOP, command=cadastro_hospital, width=25, padding=7).grid(column=3, row=1)
+ttk.Button(mi_frm, text="Cadastrar Médico(a)", image=medico_icon, compound=TOP, command=cadastro_medico, width=25, padding=7).grid(column=2, row=1)
+ttk.Button(mi_frm, text="Cadastrar Especialidades", image=especialidade_icon, compound=TOP, command=cadastro_especialidade, width=25, padding=7).grid(column=3, row=1)
 ttk.Button(mi_frm, text="Cadastrar Enfermeiro(a)", image=enfermeiro_icon, compound=TOP, command=cadastro_hospital, width=25, padding=7).grid(column=4, row=1)
 ttk.Button(mi_frm, text="Cadastrar Paciente", image=paciente_icon, compound=TOP, command=cadastro_paciente, width=25, padding=7).grid(column=5, row=1)
 ttk.Button(mi_frm, text="Cadastrar Tratamento", image=tratamento_icon, compound=TOP, command=cadastro_hospital, width=25, padding=7).grid(column=6, row=1)

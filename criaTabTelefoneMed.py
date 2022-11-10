@@ -6,10 +6,9 @@ cursor = conexao.cursor()
 
 cursor.execute("""
 CREATE TABLE TelefoneMed (
-        ID INT AUTO_INCREMENT,
+        ID INTEGER PRIMARY KEY AUTOINCREMENT,
         CRM VARCHAR(10) NOT NULL,
         Telefone INTEGER(11) NOT NULL,
-        PRIMARY KEY (ID),
         CONSTRAINT FK_Telefone_Medico
         FOREIGN KEY (CRM) REFERENCES Medico(CRM)
         ON DELETE CASCADE

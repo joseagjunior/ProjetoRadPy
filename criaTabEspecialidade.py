@@ -5,10 +5,9 @@ cursor = conexao.cursor()
 
 
 cursor.execute("""
-CREATE TABLE Especialdiade (
-        ID INT AUTO_INCREMENT,
-        Especialidade VARCHAR(50),
-        PRIMARY KEY (ID)
+CREATE TABLE Especialidade (
+        ID INTEGER PRIMARY KEY AUTOINCREMENT,
+        nomeEspecialidade VARCHAR(50)
         );
 """)
 
