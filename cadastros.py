@@ -77,11 +77,8 @@ def cadastro_medico():
     cadmed_frm = ttk.Frame(cadastro_medico, padding=20)
     cadmed_frm.pack(fill="both", expand="yes")
 
-
     im_checked = ImageTk.PhotoImage(Image.open("checked.png"))
     im_unchecked = ImageTk.PhotoImage(Image.open("unchecked.png"))
-
-
 
     def consulta_hospital():
         tv_hosp.delete(*tv_hosp.get_children())
@@ -123,11 +120,14 @@ def cadastro_medico():
 
     def inserir_medico():
         print(crm.get(), cpf.get(), nome.get(), rua.get(), numero.get(), bairro.get(), cidade.get(), cep.get())
+        resultado = banco.dql("SELECT CRM FROM Medico")
+        df = pd.DataFrame(resultado, columns=["CRM"])
+        nomes = df['CRM'].tolist()
         if crm.get()=="" or cpf.get()=="" or nome.get()=="" or rua.get()=="" or numero.get()=="" or bairro.get()=="" or cidade.get()=="" or cep.get()=="":
             messagebox.showinfo(title="Erro", message="É necessário digitar todos os dados!")
             return
         try:
-            dados_medico = "INSERT INTO paciente (CRM, CPF, Nome, Rua, Numero, Bairro, Cidade, CEP) VALUES ('"+crm.get()+"', '"+cpf.get()+"', '"+nome.get()+"', '"+rua.get()+"', '"+numero.get()+"', '"+bairro.get()+"', '"+cidade.get()+"', '"+cep.get()+"')"
+            dados_medico = "INSERT INTO Medico (CRM, CPF, Nome, Rua, Numero, Bairro, Cidade, CEP) VALUES ('"+crm.get()+"', '"+cpf.get()+"', '"+nome.get()+"', '"+rua.get()+"', '"+numero.get()+"', '"+bairro.get()+"', '"+cidade.get()+"', '"+cep.get()+"')"
             banco.dml(dados_medico)
             messagebox.showinfo(title="Salvo", message="Dados salvos com sucesso!")
         except SyntaxError:
