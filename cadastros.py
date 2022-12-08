@@ -6,15 +6,12 @@ import project
 import pandas as pd
 from PIL import ImageTk, Image
 
-
-
 def cadastro_hospital():
     cadastro_hospital = Toplevel(project.menu_inicial)
     cadastro_hospital.title("MedSystem - Cadastrar Hospital")
     cadhosp_frm = ttk.Frame(cadastro_hospital, padding=20)
     cadhosp_frm.pack(fill="both", expand="yes")
 
-    
     def inserir_hospital():
         print(cnpj.get(), nome.get(), rua.get(), numero.get(), bairro.get(), cidade.get(), cep.get(), telefone.get())
         if cnpj.get()=="" or nome.get()=="" or rua.get()=="" or numero.get()=="" or bairro.get()=="" or cidade.get()=="" or cep.get()=="" or telefone.get()=="":
@@ -256,7 +253,6 @@ def cadastro_especialidade():
     
     
     cadastro_especialidade.mainloop()
-
 
 def cadastro_paciente():
     cadastro_paciente = Toplevel(project.menu_inicial)
